@@ -17,7 +17,7 @@ var config = {
 };
 
 var player;
-var gruntSound;
+var playerJumpSound;
 var platforms;
 var cursors;
 
