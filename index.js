@@ -24,15 +24,15 @@ var cursors;
 var game = new Phaser.Game(config);
 
 function preload() {
-  this.load.image('player', './assets/pig.png');
-  this.load.audio('grunt', './assets/pigGrunt.wav');
+  this.load.image('playerImage', './assets/playerImage.png');
+  this.load.audio('playerJumpSound', './assets/playerJumpSound.wav');
 }
 
 function create() {
-  gruntSound = this.sound.add('grunt');
+  playerJumpSound = this.sound.add('playerJumpSound');
 
   // The player and its settings
-  player = this.physics.add.sprite(100, 450, 'player');
+  player = this.physics.add.sprite(100, 450, 'playerImage');
   player.displayHeight = 64;
   player.displayWidth = 64;
 
@@ -59,6 +59,6 @@ function update() {
 
   if (cursors.up.isDown && player.body.blocked.down) {
     player.setVelocityY(-480);
-    gruntSound.play();
+    playerJumpSound.play();
   }
 }
